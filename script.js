@@ -73,3 +73,20 @@ resetBtn.addEventListener("click", () => {
   isZoomed = false;
   currentZoomedImage = null;
 });
+
+const resetBtn = document.getElementById("reset-btn");
+
+if (availableIndices.length === 0) {
+  drawAgainBtn.classList.add("hidden");
+  resetBtn.classList.remove("hidden");
+}
+
+resetBtn.addEventListener("click", () => {
+  drawnIndices = [];
+  availableIndices = [...Array(26).keys()];
+  historyContainer.innerHTML = "";
+  card.classList.remove("flipped");
+  backImage.src = "";
+  drawAgainBtn.classList.add("hidden");
+  resetBtn.classList.add("hidden");
+});
