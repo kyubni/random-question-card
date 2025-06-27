@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  padding-bottom: 80px;
   font-family: sans-serif;
   background-color: #f8f8f8;
   display: flex;
