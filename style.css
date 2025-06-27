@@ -61,6 +61,32 @@ button {
   display: none;
 }
 
+#draw-again {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+
+  /* ✅ 배경 반투명 + 블러 효과 */
+  background-color: rgba(255, 255, 255, 0.2);  /* 반투명한 흰색 */
+  backdrop-filter: blur(8px);                  /* 배경 블러 효과 */
+  -webkit-backdrop-filter: blur(8px);          /* Safari 호환 */
+
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+#draw-again:hover {
+  transform: scale(1.05);
+}
+
 #history {
   margin-top: 12px;
   display: flex;
@@ -82,4 +108,37 @@ button {
   position: absolute;
   bottom: 16px;
   right: 16px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#draw-again {
+  /* 기존 스타일 유지 */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* ✅ 둥둥 떠 있는 애니메이션 */
+  animation: float 3s ease-in-out infinite;
 }
