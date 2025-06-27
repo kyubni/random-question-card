@@ -4,12 +4,14 @@ const resetBtn = document.getElementById("reset-btn");
 const historyContainer = document.getElementById("history");
 
 let isFlipped = false;
+let isZoomed = false;
+let previousSrc = "";
 
 const allImages = Array.from({ length: 26 }, (_, i) => `images/back${i + 1}.jpg`);
 let pool = [...allImages];
 
 function pickRandomFromPool() {
-  if (pool.length === 0) pool = [...allImages]; // 다 뽑았으면 리셋
+  if (pool.length === 0) pool = [...allImages];
   const index = Math.floor(Math.random() * pool.length);
   return pool.splice(index, 1)[0];
 }
@@ -18,11 +20,21 @@ function addToHistory(imageSrc) {
   const thumb = document.createElement("img");
   thumb.src = imageSrc;
   thumb.classList.add("history-thumb");
+  thumb.addEventListener("click", () => {
+    if (!isZoomed) {
+      previousSrc = backImage.src;
+      backImage.src = imageSrc;
+      isZoomed = true;
+    } else {
+      backImage.src = previousSrc;
+      isZoomed = false;
+    }
+  });
   historyContainer.appendChild(thumb);
 }
 
 card.addEventListener("click", () => {
-  if (!isFlipped) {
+  if (!isFlipped && !isZoomed) {
     const selected = pickRandomFromPool();
     backImage.src = selected;
     addToHistory(selected);
@@ -38,4 +50,5 @@ resetBtn.addEventListener("click", () => {
   backImage.src = "";
   resetBtn.classList.add("hidden");
   isFlipped = false;
+  isZoomed = false;
 });
