@@ -61,36 +61,34 @@ button {
   display: none;
 }
 
-#reset-btn {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-}
-
 #draw-again {
-  position: fixed;
+  position: fixed;             /* ✅ 스크롤과 상관없이 화면에 고정 */
   bottom: 20px;
   right: 20px;
+
   padding: 12px 20px;
   font-size: 16px;
   border: none;
-  border-radius: 12px;
+  border-radius: 16px;
 
-  /* ✅ 배경 반투명 + 블러 효과 */
-  background-color: rgba(255, 255, 255, 0.2);  /* 반투명한 흰색 */
-  backdrop-filter: blur(8px);                  /* 배경 블러 효과 */
-  -webkit-backdrop-filter: blur(8px);          /* Safari 호환 */
+  /* ✅ 반투명 + 블러 */
+  background-color: rgba(255, 255, 255, 0.25);     /* 반투명 흰색 */
+  backdrop-filter: blur(10px);                    /* 배경 블러 */
+  -webkit-backdrop-filter: blur(10px);            /* Safari 지원 */
 
-  color: #fff;
+  color: #000;
+  font-weight: 600;
   cursor: pointer;
-  z-index: 10;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  /* ✅ 입체감 (둥둥 떠있는 느낌) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
 }
 
 #draw-again:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);  /* 살짝 위로 뜨는 애니메이션 */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
 #history {
