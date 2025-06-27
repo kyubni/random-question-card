@@ -62,7 +62,14 @@ button {
 }
 
 #reset-btn {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
+  margin-top: 20px;
+  margin-left: auto;
+  display: block;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5f8dde;
+  color: white;
+  cursor: pointer;
 }
