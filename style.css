@@ -60,3 +60,9 @@ button {
 .hidden {
   display: none;
 }
+
+#reset-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
