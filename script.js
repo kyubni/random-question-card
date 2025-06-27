@@ -52,3 +52,16 @@ resetBtn.addEventListener("click", () => {
   isFlipped = false;
   isZoomed = false;
 });
+
+{savedCards.map((index) => (
+  <img
+    key={index}
+    src={cards[index]}
+    className="thumbnail"
+    onClick={isFront ? null : () => handleThumbnailClick(index)}
+    style={{
+      cursor: isFront ? 'not-allowed' : 'pointer',
+      opacity: isFront ? 0.4 : 1
+    }}
+  />
+))}
