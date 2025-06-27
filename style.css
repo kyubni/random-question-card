@@ -46,21 +46,6 @@ body {
   transform: rotateY(180deg);
 }
 
-button {
-  margin-top: 16px;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #5f8dde;
-  color: white;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
-}
-
 #draw-again {
   position: fixed;             /* ✅ 스크롤과 상관없이 화면에 고정 */
   bottom: 20px;
