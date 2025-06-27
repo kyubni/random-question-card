@@ -61,6 +61,12 @@ button {
   display: none;
 }
 
+#reset-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
 #draw-again {
   position: fixed;
   bottom: 20px;
@@ -104,41 +110,3 @@ button {
   flex-shrink: 0;
 }
 
-#reset-btn {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-#draw-again {
-  /* 기존 스타일 유지 */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #fff;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-  /* ✅ 둥둥 떠 있는 애니메이션 */
-  animation: float 3s ease-in-out infinite;
-}
