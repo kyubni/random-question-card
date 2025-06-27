@@ -12,7 +12,8 @@ body {
 .card-container {
   position: relative;
   width: 300px;
-  margin-top: 20px;
+  height: 480px;
+  margin-top: 16px;
   padding-bottom: 24px;
   perspective: 1000px;
 }
