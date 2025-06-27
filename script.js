@@ -1,6 +1,6 @@
 const card = document.getElementById("card");
 const backImage = document.getElementById("back-image");
-const drawAgainBtn = document.getElementById("draw-again");
+const resetBtn = document.getElementById("draw-again");
 const historyContainer = document.getElementById("history");
 
 let isFlipped = false;
